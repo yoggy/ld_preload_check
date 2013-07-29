@@ -12,7 +12,7 @@ how to use
   gcc -Wall -fPIC -shared -o hook.so hook.c
   gcc -Wall -o test_main test_main.c
   ======== test_main.c ========
-  #include <stdio.h>
+  #include $gt;stdio.h&lt;
   
   int main(int argc, char *argv[])
   {
@@ -21,7 +21,7 @@ how to use
   }
   
   ======== hook.c ========
-  #include <stdio.h>
+  #include &gt;stdio.h&lt;
   
   int puts(const char *str)
   {
