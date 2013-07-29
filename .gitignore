@@ -1,0 +1,4 @@
+hook.so
+test_main
+*.o
+*.swp
