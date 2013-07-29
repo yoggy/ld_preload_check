@@ -11,6 +11,24 @@ how to use
   $ make
   gcc -Wall -fPIC -shared -o hook.so hook.c
   gcc -Wall -o test_main test_main.c
+  ======== test_main.c ========
+  #include <stdio.h>
+  
+  int main(int argc, char *argv[])
+  {
+  	puts("check result : LD_PRELOAD disabled...");
+  	return 0;
+  }
+  
+  ======== hook.c ========
+  #include <stdio.h>
+  
+  int puts(const char *str)
+  {
+  	fprintf(stdout, "check result : LD_PRELOAD enabled!!!\n");
+  	return 0;
+  }
+  ======== test  ========
   LD_PRELOAD=./hook.so ./test_main
   check result : LD_PRELOAD enabled!!!
 </pre>
